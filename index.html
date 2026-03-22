@@ -34,7 +34,14 @@
     <!-- Polyfills bundle. -->
 
 <script src="src/polyfills.bundle.js" charset="utf-8"> </script>    
-
+<script>
+    // 手动指定资源根路径（适配 GitHub Pages）
+    window.__ccConfig = {
+        bundleRoot: './', // 确保是相对路径
+        remoteBundles: {},
+        server: ''
+    };
+</script>
 
 <!-- SystemJS support. -->
 <script src="src/system.bundle.js" charset="utf-8"> </script>
