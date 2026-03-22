@@ -33,15 +33,21 @@
     </p>
     <!-- Polyfills bundle. -->
 
-<script src="src/polyfills.bundle.js" charset="utf-8"> </script>    
+
 <script>
-    // 手动指定资源根路径（适配 GitHub Pages）
+    // 配置 Cocos 资源加载的基础路径（适配 GitHub Pages）
     window.__ccConfig = {
-        bundleRoot: './', // 确保是相对路径
+        // 核心：把 basePath 设置为 GitHub 仓库名
+        basePath: '/cocos-game-1/', 
+        bundleRoot: './',
         remoteBundles: {},
         server: ''
     };
-</script>
+    // 兼容旧版 Cocos 的路径配置
+    window.location.pathname = '/cocos-game-1/' + window.location.pathname;
+</script> 
+<script src="src/polyfills.bundle.js" charset="utf-8"> </script>    
+
 
 <!-- SystemJS support. -->
 <script src="src/system.bundle.js" charset="utf-8"> </script>
